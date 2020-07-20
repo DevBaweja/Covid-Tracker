@@ -1,0 +1,37 @@
+### In components folder
+
+Create index file
+
+// This works
+export { default as Cards } from './cards/cards.component';
+export { default as Picker } from './picker/picker.component';
+export { default as Chart } from './chart/chart.component';
+
+
+import Cards from './cards/cards.component';
+import Picker from './picker/picker.component';
+import Chart from './chart/chart.component';
+
+export {
+    Cards,
+    Picker,
+    Chart
+}
+
+# In App
+import { Cards, Chart, Picker } from './components';
+
+No need to add index as it will think components as folder as there is no components.js
+And find index.js inside component folder
+
+### Styling with styled components
+### Styling with module pattern
+
+App.module.scss
+module must be present it will return all the selector in object
+
+import styles from './App.module.scss';
+
+<div className={styles.container}>
+
+</div>
