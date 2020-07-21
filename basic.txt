@@ -35,3 +35,36 @@ import styles from './App.module.scss';
 <div className={styles.container}>
 
 </div>
+
+
+### Misc
+
+# Don't use Object.create as it is used to create object with prototype
+Use spread operator or Object.assign to clone object
+
+# Iterate over Object
+Object.keys(data)
+use map and for values data[key]
+Object.values(data)
+
+for (const [key, value] of Object.entries(data)) {
+    console.log(key, value);
+}
+Use Object.entries gives array so we are using for...of
+
+
+for...of - Iterate over Arrays and Strings
+
+for...in - Iterate over Object properties
+Acts like Object.keys(data)
+Use data[key] to get access to Object.values(data)
+
+
+Object.keys(daily).length to check for empty object
+
+# Omit properties from object
+
+const data = {...globalData}
+delete data.lastUpdate
+
+const {lastUpdate, ...data } = globalData

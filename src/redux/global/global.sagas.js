@@ -3,13 +3,12 @@ import axios from 'axios';
 import GlobalActionTypes from './global.types';
 import { fetchGlobalDataSuccess, fetchGlobalDataFailure } from './global.actions';
 
-export function* fetchGlobalData() {
+export function* fetchGlobalData(country) {
     const url = `https://covid19.mathdro.id/api`;
-
     try {
         const {
             data: { confirmed, recovered, deaths, lastUpdate },
-        } = yield axios.get(url);
+        } = yield call(axios.get, url);
 
         yield put(fetchGlobalDataSuccess({ confirmed, recovered, deaths, lastUpdate }));
     } catch (err) {
