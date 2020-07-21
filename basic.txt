@@ -68,3 +68,7 @@ const data = {...globalData}
 delete data.lastUpdate
 
 const {lastUpdate, ...data } = globalData
+
+import img from './img/favicon.png'
+
+<img src={img} />

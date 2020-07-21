@@ -17,3 +17,11 @@ export const getDateStrFormatted = (dateStr, char) => {
 export const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 
 export const uppercase = str => str.toUpperCase();
+
+export const nFormatter = cases => {
+    if (cases >= 1e12) return +(cases / 1e12).toFixed(1) + 'T';
+    else if (cases >= 1e9) return +(cases / 1e9).toFixed(1) + 'B';
+    else if (cases >= 1e6) return +(cases / 1e6).toFixed(1) + 'M';
+    else if (cases >= 1e3) return +(cases / 1e3).toFixed(1) + 'K';
+    else return cases;
+};

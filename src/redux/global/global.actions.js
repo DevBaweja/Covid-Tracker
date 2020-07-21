@@ -13,3 +13,8 @@ export const fetchGlobalDataFailure = err => ({
     type: GlobalActionTypes.FETCH_GLOBAL_DATA_FAILURE,
     payload: err,
 });
+
+export const changeCountry = country => ({
+    type: GlobalActionTypes.CHANGE_COUNTRY,
+    payload: country,
+});

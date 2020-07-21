@@ -3,6 +3,7 @@ import GlobalActionTypes from './global.types';
 // confirmed, recovered, deaths, lastUpdate
 const INITIAL_STATE = {
     data: {},
+    country: null,
     isFetching: false,
     err: null,
 };
@@ -13,6 +14,7 @@ const globalReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 data: {},
+                country: null,
                 isFetching: true,
                 err: null,
             };
@@ -29,6 +31,12 @@ const globalReducer = (state = INITIAL_STATE, action) => {
                 data: {},
                 isFetching: false,
                 err: action.payload,
+            };
+        case GlobalActionTypes.CHANGE_COUNTRY:
+            return {
+                ...state,
+                data: {},
+                country: action.payload,
             };
         default:
             return state;
